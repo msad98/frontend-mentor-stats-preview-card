@@ -10,16 +10,19 @@ body {
   font-family: sans-serif;
   background-color: #13003f;
   color: white;
-  padding-top: 82px;
+
+  position: relative;
+  min-height: 100vh;
 }
 
 .wrapper {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 50vh;
   width: 80%;
   margin: auto;
-  margin-top: auto;
-  margin-bottom: auto;
 }
 
 .card-content,
@@ -32,7 +35,6 @@ body {
 
 .card-content {
   left: 0;
-  top: 0;
   z-index: 1;
   background-color: #2a1952;
   padding: 52px;
@@ -43,7 +45,6 @@ body {
 
 .card-image {
   right: 0;
-  top: 0;
   background-color: #b36fd3;
   background-image: url("./images/image-header-desktop.jpg");
   background-size: cover;
@@ -85,13 +86,12 @@ body {
 }
 
 @media (max-width: 768px) {
-  body {
-    padding: 62px 0;
-  }
-
   .wrapper {
     position: static;
     height: auto;
+    margin: 82px auto;
+
+    transform: translate(0, 0);
   }
 
   .card-content,
@@ -105,12 +105,10 @@ body {
     text-align: center;
     border-radius: 0 0 6px 6px;
     height: auto;
-    z-index: auto;
   }
 
   .card-image {
     height: 250px;
-    order: -1;
     border-radius: 6px 6px 0px 0px;
   }
 
