@@ -8,7 +8,7 @@
 
 body {
   font-family: sans-serif;
-  background-color: #13003f;
+  background-color: var(--background-color);
   color: white;
 
   position: relative;
@@ -20,7 +20,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 50vh;
+  min-height: 50vh;
   width: 80%;
   margin: auto;
 }
@@ -28,7 +28,6 @@ body {
 .card-content,
 .card-image {
   position: absolute;
-  vertical-align: top;
   width: 50%;
   height: 100%;
 }
@@ -36,7 +35,7 @@ body {
 .card-content {
   left: 0;
   z-index: 1;
-  background-color: #2a1952;
+  background-color: var(--secondary-color);
   padding: 52px;
   color: white;
   border-top-left-radius: 6px;
@@ -45,7 +44,7 @@ body {
 
 .card-image {
   right: 0;
-  background-color: #b36fd3;
+  background-color: var(--primary-color);
   background-image: url("./images/image-header-desktop.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -57,7 +56,7 @@ body {
 
 .card-content .description {
   font-size: 12px;
-  color: rgb(156, 156, 156);
+  color: var(--neutral-color);
   margin-top: 18px;
   margin-bottom: 42px;
 }
@@ -74,7 +73,7 @@ body {
 
 .stats .key {
   font-size: 10px;
-  color: rgb(156, 156, 156);
+  color: var(--neutral-color);
 }
 
 .card-content p {
@@ -82,14 +81,14 @@ body {
 }
 
 .purple-text {
-  color: #b36fd3;
+  color: var(--primary-color);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 868px) {
   .wrapper {
     position: static;
     height: auto;
-    margin: 82px auto;
+    margin: 4rem auto;
 
     transform: translate(0, 0);
   }
@@ -116,4 +115,11 @@ body {
     display: block;
     padding: 12px 0;
   }
+}
+
+:root {
+  --background-color: #0a0c1b;
+  --primary-color: #b056dd;
+  --secondary-color: #1c1938;
+  --neutral-color: rgb(156, 156, 156);
 }
