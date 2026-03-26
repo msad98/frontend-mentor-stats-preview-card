@@ -1,0 +1,121 @@
+/* my goal was: to achieve the design by plain HTML and CSS without using grid/flexbox */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #13003f;
+  color: white;
+  padding-top: 82px;
+}
+
+.wrapper {
+  position: relative;
+  height: 50vh;
+  width: 80%;
+  margin: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.card-content,
+.card-image {
+  position: absolute;
+  vertical-align: top;
+  width: 50%;
+  height: 100%;
+}
+
+.card-content {
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background-color: #2a1952;
+  padding: 52px;
+  color: white;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.card-image {
+  right: 0;
+  top: 0;
+  background-color: #b36fd3;
+  background-image: url("../images/image-header-desktop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-position: center;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.card-content .description {
+  font-size: 12px;
+  color: rgb(156, 156, 156);
+  margin-top: 18px;
+  margin-bottom: 42px;
+}
+
+.card-content .stats {
+  display: inline-block;
+  padding: 12px 32px 12px 0;
+}
+
+.stats .value {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.stats .key {
+  font-size: 10px;
+  color: rgb(156, 156, 156);
+}
+
+.card-content p {
+  margin-top: 22px;
+}
+
+.purple-text {
+  color: #b36fd3;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 62px 0;
+  }
+
+  .wrapper {
+    position: static;
+    height: auto;
+  }
+
+  .card-content,
+  .card-image {
+    width: 100%;
+    position: static;
+  }
+
+  .card-content {
+    padding: 16px;
+    text-align: center;
+    border-radius: 0 0 6px 6px;
+    height: auto;
+    z-index: auto;
+  }
+
+  .card-image {
+    height: 250px;
+    order: -1;
+    border-radius: 6px 6px 0px 0px;
+  }
+
+  .card-content .stats {
+    display: block;
+    padding: 12px 0;
+  }
+}
